@@ -91,8 +91,9 @@ img {
 }
 
 #main {
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100vh;
+  width: 100%;
 }
 
 #itemList {
@@ -119,46 +120,6 @@ img {
   justify-content: flex-end;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
   position: absolute;
-}
-#itemList li:nth-child(1) {
-  transform: translateZ(-0000px);
-  z-index: calc(100 - 1);
-}
-#itemList li:nth-child(2) {
-  transform: translateZ(-1000px);
-  z-index: calc(100 - 2);
-}
-#itemList li:nth-child(3) {
-  transform: translateZ(-2000px);
-  z-index: calc(100 - 3);
-}
-#itemList li:nth-child(4) {
-  transform: translateZ(-3000px);
-  z-index: calc(100 - 4);
-}
-#itemList li:nth-child(5) {
-  transform: translateZ(-4000px);
-  z-index: calc(100 - 5);
-}
-#itemList li:nth-child(6) {
-  transform: translateZ(-5000px);
-  z-index: calc(100 - 6);
-}
-#itemList li:nth-child(7) {
-  transform: translateZ(-6000px);
-  z-index: calc(100 - 7);
-}
-#itemList li:nth-child(8) {
-  transform: translateZ(-7000px);
-  z-index: calc(100 - 8);
-}
-#itemList li:nth-child(9) {
-  transform: translateZ(-8000px);
-  z-index: calc(100 - 9);
-}
-#itemList li:nth-child(10) {
-  transform: translateZ(-9000px);
-  z-index: calc(100 - 10);
 }
 #itemList li .info {
   width: 50%;

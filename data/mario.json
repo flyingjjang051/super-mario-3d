@@ -1,5 +1,7 @@
 {
   "imgPath": "images/supermario/",
+  "distanceZ": 2000,
+  "step": 5,
   "items": [
     {
       "img": "supermario01.png",

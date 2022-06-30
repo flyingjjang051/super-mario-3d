@@ -88,8 +88,9 @@ img {
   }
 }
 #main {
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100vh;
+  width: 100%;
 }
 #itemList {
   height: 100vh;
@@ -114,12 +115,12 @@ img {
     justify-content: flex-end;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     position: absolute;
-    @for $i from 1 through 10 {
-      &:nth-child(#{$i}) {
-        transform: translateZ(-#{$i - 1}000px);
-        z-index: calc(100 - #{$i});
-      }
-    }
+    // @for $i from 1 through 10 {
+    //   &:nth-child(#{$i}) {
+    //     transform: translateZ(-($i - 1) * 5000px);
+    //     z-index: calc(100 - $i);
+    //   }
+    // }
 
     .info {
       width: 50%;

@@ -65,10 +65,15 @@
         .done(function (response) {
           const imgPath = response.imgPath;
           const items = response.items;
+          const distanceZ = response.distanceZ;
+          const step = response.step;
+          const total = items.length;
+          let tz = 0;
           let tempHtml = "";
           $.each(items, function (idx, item) {
             //idx 0 ~ 9
-            tempHtml += `<li class="" style="background:${item.bg}">
+            tempHtml += `<li style="background:${item.bg}; transform:translateZ(${idx * -distanceZ}px); 
+            z-index:${total - idx}">
           <div class="info">
             <h2 class="title">${item.title}</h2>
             <p class="desc">${item.desc}</p>
@@ -82,7 +87,7 @@
           // 이미지 로딩이 끝난 다음 swiper 적용되게
 
           itemList.html(tempHtml);
-          const total = items.length;
+
           if (itemSlider !== null) {
             itemSlider.destroy();
           }
@@ -91,13 +96,14 @@
               const deltaY = e.originalEvent.deltaY;
               if (deltaY > 0) {
                 //휠을 밑으로 굴리기....
-                $("#itemList li").each(function (idx, item) {
-                  // item은 jQuery 객체가 아니다. 만약 jQuery 함수를 쓸려면 wrapping 해야한다.
-                  $(item).css("transform", `translateZ(0)`);
-                });
+                tz += distanceZ / step;
               } else {
                 //휠을 위로 굴리기....
+                tz -= distanceZ / step;
               }
+              $("#itemList li").each(function (idx, item) {
+                gsap.to(item, { z: tz + -distanceZ * idx });
+              });
             });
           });
         })
