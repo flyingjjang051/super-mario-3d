@@ -170,6 +170,7 @@ img {
   left: 100px;
   transform: translateY(-50%);
   li {
+    cursor: pointer;
     &.on span:before {
       width: 100%;
     }

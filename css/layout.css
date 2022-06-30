@@ -166,6 +166,9 @@ img {
   left: 100px;
   transform: translateY(-50%);
 }
+#menuList li {
+  cursor: pointer;
+}
 #menuList li.on span:before {
   width: 100%;
 }

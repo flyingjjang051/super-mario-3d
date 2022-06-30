@@ -73,7 +73,11 @@
           let tempHtml = "";
           let tempMenuHtml = "";
           $.each(items, function (idx, item) {
-            tempMenuHtml += `<li><span>${item.title}</span></li>`;
+            if (idx === 0) {
+              tempMenuHtml += `<li class="on"><span>${item.title}</span></li>`;
+            } else {
+              tempMenuHtml += `<li><span>${item.title}</span></li>`;
+            }
             tempHtml += `<li style="background:${item.bg}; transform:translateZ(${idx * -distanceZ}px ); 
             z-index:${total - idx}">
           <div class="info">
@@ -108,7 +112,9 @@
 
             $(window).off();
             $(window).on("mousewheel", function (e) {
-              //console.log(e);
+              //0,1,2,3,4,5,6,7,8
+              const sel = Math.round(tz / distanceZ);
+              $("#menuList li").eq(sel).addClass("on").siblings().removeClass("on");
               const deltaY = e.originalEvent.deltaY;
               if (deltaY > 0) {
                 //휠을 밑으로 굴리기....
@@ -130,12 +136,20 @@
               });
             });
           });
+          $("#menuList li").on("click", function () {
+            $(this).addClass("on").siblings().removeClass("on");
+            tz = $(this).index() * distanceZ;
+            $("#itemList li").each(function (idx, item) {
+              gsap.to(item, { z: tz + -distanceZ * idx });
+            });
+          });
         })
         .fail(function (error) {
           console.log(error);
           //alert("파일이 로딩되지 않았습니다.")
         });
     };
+
     loadJson("data/mario.json");
   </script>
 </html>
