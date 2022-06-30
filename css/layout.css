@@ -105,8 +105,8 @@ img {
   perspective: 1000px;
   perspective-origin: 50% 10%;
   position: absolute;
-  right: calc(50% - 400px);
   box-sizing: border-box;
+  right: 650px;
 }
 #itemList li {
   width: 900px;
@@ -155,4 +155,35 @@ img {
   max-width: 500px;
   max-height: 600px;
   object-fit: contain;
+}
+
+#menuList {
+  position: absolute;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  top: 50%;
+  left: 100px;
+  transform: translateY(-50%);
+}
+#menuList li.on span:before {
+  width: 100%;
+}
+#menuList li span {
+  display: inline-block;
+  position: relative;
+  padding: 5px 20px;
+}
+#menuList li span:before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 3px;
+  background-color: #f00;
+  border-radius: 100px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: all 0.25s ease;
 }

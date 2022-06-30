@@ -1,5 +1,7 @@
 {
   "imgPath": "images/monster/",
+  "distanceZ": 2000,
+  "step": 5,
   "items": [
     {
       "img": "monster01.png",

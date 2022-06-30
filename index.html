@@ -41,14 +41,15 @@
     </header>
     <main id="main">
       <ul class="" id="itemList"></ul>
+      <nav id="menu">
+        <ul id="menuList"></ul>
+      </nav>
     </main>
-    <nav id="menu">
-      <ul></ul>
-    </nav>
   </body>
   <script>
     //prettier-ignore
     const itemList = $("#itemList");
+    const menuList = $("#menuList");
     let itemSlider = null;
 
     $("#gnb li").on("click", function () {
@@ -70,7 +71,9 @@
           const total = items.length;
           let tz = 0;
           let tempHtml = "";
+          let tempMenuHtml = "";
           $.each(items, function (idx, item) {
+            tempMenuHtml += `<li><span>${item.title}</span></li>`;
             tempHtml += `<li style="background:${item.bg}; transform:translateZ(${idx * -distanceZ}px ); 
             z-index:${total - idx}">
           <div class="info">
@@ -86,21 +89,24 @@
           // 이미지 로딩이 끝난 다음 swiper 적용되게
 
           itemList.html(tempHtml);
+          menuList.html(tempMenuHtml);
 
           if (itemSlider !== null) {
             itemSlider.destroy();
           }
           itemList.imagesLoaded().always(function () {
             // gsap.to("#itemList li", {
-            //   scale: 1,
             //   ease: "bounce",
-            //   duration: 1,
+            //   duration: 2,
+            //   top: "50%",
             //   stagger: {
-            //     each: 0.1,
+            //     each: 0.25,
             //     from: "end",
             //     grid: "auto",
             //   },
             // });
+
+            $(window).off();
             $(window).on("mousewheel", function (e) {
               //console.log(e);
               const deltaY = e.originalEvent.deltaY;
