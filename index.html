@@ -71,8 +71,7 @@
           let tz = 0;
           let tempHtml = "";
           $.each(items, function (idx, item) {
-            //idx 0 ~ 9
-            tempHtml += `<li style="background:${item.bg}; transform:translateZ(${idx * -distanceZ}px); 
+            tempHtml += `<li style="background:${item.bg}; transform:translateZ(${idx * -distanceZ}px ); 
             z-index:${total - idx}">
           <div class="info">
             <h2 class="title">${item.title}</h2>
@@ -92,13 +91,32 @@
             itemSlider.destroy();
           }
           itemList.imagesLoaded().always(function () {
+            // gsap.to("#itemList li", {
+            //   scale: 1,
+            //   ease: "bounce",
+            //   duration: 1,
+            //   stagger: {
+            //     each: 0.1,
+            //     from: "end",
+            //     grid: "auto",
+            //   },
+            // });
             $(window).on("mousewheel", function (e) {
+              //console.log(e);
               const deltaY = e.originalEvent.deltaY;
               if (deltaY > 0) {
                 //휠을 밑으로 굴리기....
+                if (tz >= distanceZ * (total - 1)) {
+                  tz = distanceZ * (total - 1);
+                  return false;
+                }
                 tz += distanceZ / step;
               } else {
                 //휠을 위로 굴리기....
+                if (tz <= 0) {
+                  tz = 0;
+                  return false;
+                }
                 tz -= distanceZ / step;
               }
               $("#itemList li").each(function (idx, item) {

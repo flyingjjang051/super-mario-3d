@@ -91,6 +91,7 @@ img {
   overflow: hidden;
   height: 100vh;
   width: 100%;
+  position: relative;
 }
 #itemList {
   height: 100vh;
@@ -99,11 +100,10 @@ img {
   align-items: center;
   perspective: 1000px;
   perspective-origin: 50% 10%;
-  position: relative;
-  padding-left: 500px;
+  position: absolute;
+  right: calc(50% - 400px);
   box-sizing: border-box;
   li {
-    opacity: 1;
     width: 900px;
     height: 500px;
     background-color: #fff;
@@ -111,11 +111,12 @@ img {
     display: flex;
     padding: 80px;
     box-sizing: border-box;
-    position: relative;
     justify-content: flex-end;
     box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
     position: absolute;
-    // @for $i from 1 through 10 {
+    //opacity: 0;
+    //transform: scale(0);
+    // @for $i from 1 through 100 {
     //   &:nth-child(#{$i}) {
     //     transform: translateZ(-($i - 1) * 5000px);
     //     z-index: calc(100 - $i);
