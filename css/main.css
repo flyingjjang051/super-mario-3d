@@ -1,0 +1,60 @@
+#main .section {
+  background-repeat: no-repeat;
+  background-position: right 100px top 70%;
+  background-size: 600px;
+  background-attachment: fixed;
+}
+#main .section .info {
+  padding-left: 100px;
+  color: #fff;
+}
+#main .section .info .category {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+#main .section .info .title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+}
+#main .section .info .depth {
+  font-size: 20px;
+  padding-bottom: 10px;
+  margin-bottom: 80px;
+  border-bottom: 2px solid #f00;
+  display: inline-block;
+}
+#main .section .info .depth strong {
+  font-weight: 700;
+}
+#main .section .info .price {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+#bgParticle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 5%) #333;
+}
+
+.pagination {
+  color: #fff;
+  font-size: 18px;
+  position: fixed;
+  bottom: 50px;
+  text-align: center;
+  padding: 15px 40px;
+  background-color: rgb(192, 0, 0);
+  border-radius: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  text-shadow: 1px 1px 0px #8d0000,2px 2px 0px #8d0000,3px 3px 0px #8d0000,4px 4px 0px #8d0000,5px 5px 0px #8d0000,6px 6px 0px #8d0000,7px 7px 0px #8d0000,8px 8px 0px #8d0000,9px 9px 0px #8d0000,10px 10px 0px #8d0000,11px 11px 0px #8d0000,12px 12px 0px #8d0000,13px 13px 0px #8d0000,14px 14px 0px #8d0000,15px 15px 0px #8d0000,16px 16px 0px #8d0000,17px 17px 0px #8d0000,18px 18px 0px #8d0000,19px 19px 0px #8d0000,20px 20px 0px #8d0000,21px 21px 0px #8d0000,22px 22px 0px #8d0000,23px 23px 0px #8d0000,24px 24px 0px #8d0000,25px 25px 0px #8d0000,26px 26px 0px #8d0000,27px 27px 0px #8d0000,28px 28px 0px #8d0000,29px 29px 0px #8d0000,30px 30px 0px #8d0000;;
+}

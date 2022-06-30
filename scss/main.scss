@@ -1,0 +1,66 @@
+@import "vars";
+@import "mixins";
+
+#main {
+  .section {
+    background-repeat: no-repeat;
+    background-position: right 100px top 70%;
+    background-size: 600px;
+    background-attachment: fixed;
+    .info {
+      padding-left: 100px;
+      color: #fff;
+      .category {
+        font-size: 18px;
+        font-weight: 500;
+        margin-bottom: 20px;
+      }
+      .title {
+        font-size: 42px;
+        font-weight: 700;
+        margin-bottom: 30px;
+        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+      }
+      .depth {
+        font-size: 20px;
+        padding-bottom: 10px;
+        margin-bottom: 80px;
+        border-bottom: 2px solid #f00;
+        display: inline-block;
+        strong {
+          font-weight: 700;
+        }
+      }
+      .price {
+        font-size: 24px;
+        font-weight: 700;
+      }
+    }
+  }
+}
+.bgLine {
+}
+#bgParticle {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.05) 1px, 0, transparent 5%) #333;
+}
+
+.pagination {
+  color: #fff;
+  font-size: 18px;
+  position: fixed;
+  bottom: 50px;
+  text-align: center;
+  padding: 15px 40px;
+  background-color: rgb(192, 0, 0);
+  border-radius: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  overflow: hidden;
+  @include longShadow(darken(rgb(192, 0, 0), 10), right, 30);
+}
